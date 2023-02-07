@@ -1,0 +1,34 @@
+class ImagePath {
+  static String Img1 = "assets/images/pg1.png";
+  static String Img2 = "assets/images/pg2.png";
+  static String Img3 = "assets/images/noti.png";
+  static String Img4 = "assets/images/menu.png";
+  static String Img5 = "assets/images/ban.png";
+  static String Img6 = "assets/images/scan.png";
+  static String Img7 = "assets/images/icon.png";
+  static String Img8 = "assets/images/co1.png";
+  static String Img9 = "assets/images/co2.png";
+  static String pro = "assets/images/pro1.png";
+  static String play = "assets/images/play.png";
+  static String uii = "assets/images/ui.png";
+  static String ui3 = "assets/images/re12.png";
+  static String ui2 = "assets/images/c1.png";
+  static String ui33 = "assets/images/c2.png";
+  static String ui4 = "assets/images/c3.png";
+  static String ui5 = "assets/images/c4.png";
+  static String ui7 = "assets/images/w1.png";
+  static String drop = "assets/images/drop.png";
+  static String sun = "assets/images/sun.png";
+  static String dot = "assets/images/dot.png";
+  static String img1 = "assets/images/ww1.png";
+  static String img2 = "assets/images/ww3.png";
+  static String basek = "assets/images/basket.png";
+  static String scan1 = "assets/images/sss.png";
+  static String icon2 = "assets/images/icon2.png";
+  static String dev = "assets/images/dev.png";
+  static String div = "assets/images/div.png";
+  static String smile = "assets/images/smile.png";
+  static String plant = "assets/images/plant.png";
+  static String com1 = "assets/images/comm.png";
+  static String cch = "assets/images/cch.png";
+}
