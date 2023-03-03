@@ -150,6 +150,7 @@ class _MyLoginState extends State<MyLogin> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: TextFormField(
+                  obscureText: true,
                   controller: editpass,
                   decoration: InputDecoration(
                     prefixIcon:

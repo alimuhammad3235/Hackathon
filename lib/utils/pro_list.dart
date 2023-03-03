@@ -51,24 +51,13 @@ List<dynamic> probag = [
     "image": "assets/images/basket.png",
     "price": 350
   },
-  {
-    "name": "Peperomia Obtusfolia",
-    "image": "assets/images/basket2.png",
-    "price": 400
-  },
-  {
-    "name": "Peperomia Obtusfolia",
-    "image": "assets/images/basket.png",
-    "price": 260
-  },
 ];
-class see {
+List<Map> detail = [
+  {"name":"paperomia","price":400, "size": "5'h"},
+  // {"name":"Cactus","price":260, "size": "5'h"},
+  // {"name":"Watermelon","price":400, "size": "5'h"},
+  // {"name":"Croton Petra","price":200, "size": "5'h"},
+  // {"name":"Bird's Nest Fern","price":200, "size": "5'h"}
+];
 
-   static double _count = 1;
-  static check() {
-    _count = _count - 1;
-  }
- static checkadd() {
-    _count = _count + 1;
-  }
-}
+

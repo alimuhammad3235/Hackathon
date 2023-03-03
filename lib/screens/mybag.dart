@@ -1,21 +1,18 @@
-import 'package:eapp/screens/menu1.dart';
+import 'package:eapp/screens/propage.dart';
 import 'package:eapp/utils/colors.dart';
 import 'package:eapp/utils/imagespath.dart';
-import 'package:eapp/utils/pro_list.dart';
 import 'package:eapp/widgets/list_bag.dart';
+import 'package:eapp/widgets/prodet.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-class MyBag extends StatefulWidget {
-  const MyBag({super.key});
+class MyBag extends StatelessWidget {
+  String name;
+  int price;
+  MyBag({super.key, required this.name, required this.price});
 
   @override
-  State<MyBag> createState() => _MyBagState();
-}
+  int parcel = 80;
 
-class _MyBagState extends State<MyBag> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(children: [
@@ -58,12 +55,12 @@ class _MyBagState extends State<MyBag> {
             ListView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
-                itemCount: probag.length,
+                itemCount: addtoBag1.length,
                 itemBuilder: ((context, index) {
                   return MyBag2(
-                      name: probag[index]["name"],
-                      image: probag[index]["image"],
-                      price: probag[index]["price"]);
+                      name: addtoBag1[index]["name"],
+                      image: "assets/images/basket.png",
+                      price: addtoBag1[index]["price"].toString());
                 })),
             Padding(
               padding: const EdgeInsets.only(top: 15),
@@ -95,7 +92,7 @@ class _MyBagState extends State<MyBag> {
                   ),
                 ),
                 leading: Image.asset(ImagePath.dev),
-                trailing: Text("\$80",
+                trailing: Text("\$${parcel.toString()}",
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
@@ -134,7 +131,7 @@ class _MyBagState extends State<MyBag> {
                         fontSize: 32,
                         fontWeight: FontWeight.w700,
                       )),
-                  Text("\$1090",
+                  Text("\$${price + parcel}",
                       style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.w700,
@@ -206,10 +203,10 @@ class _MyBagState extends State<MyBag> {
                   SizedBox(
                     width: 25,
                   ),
-                  Icon(
-                    Icons.delete_outline,
-                    color: Stylecolor.bgColor,
-                  ),
+                   Icon(
+                     Icons.delete_outline,
+                     color: Stylecolor.bgColor,
+                   ),
                 ],
               ),
               leading: Image.asset(
@@ -234,35 +231,40 @@ class _MyBagState extends State<MyBag> {
             ),
             GestureDetector(
               onTap: (() {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Mymenu()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyPrdts()));
               }),
-              child: Container(
-                width: MediaQuery.of(context).size.width * 1,
-                height: MediaQuery.of(context).size.height * 0.08,
-                decoration: BoxDecoration(
-                    color: Stylecolor.bgColor,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20))),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Checkout",
-                          style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white)),
-                      Text("\$1090",
-                          style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white)),
-                    ],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width * 1,
+                    height: MediaQuery.of(context).size.height * 0.08,
+                    decoration: BoxDecoration(
+                        color: Stylecolor.bgColor,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20))),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Checkout",
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white)),
+                          Text("\$${price + parcel}",
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white)),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
           ]),

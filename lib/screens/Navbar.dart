@@ -20,10 +20,10 @@ class _MyHomeState extends State<MyHome> {
       child: MyPrdts(),
     ),
     Center(
-      child: ProPage2(),
+      child: ProPage2(name: '',price: 0,),
     ),
     Center(
-      child: MyBag(),
+      child: MyBag(name: '',price: 0,),
     ),
     Center(
       child: Mymenu(),

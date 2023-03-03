@@ -8,7 +8,8 @@ import 'package:eapp/utils/imagespath.dart';
 import 'package:flutter/material.dart';
 
 class MyPrdts extends StatefulWidget {
-  const MyPrdts({super.key});
+
+  MyPrdts({super.key});
 
   @override
   State<MyPrdts> createState() => _MyPrdtsState();
@@ -239,7 +240,7 @@ class _MyPrdtsState extends State<MyPrdts> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => ProPage2()));
+                                    builder: (context) => ProPage2(name:snapshot.data.docs[index]["name"],price:snapshot.data.docs[index]["price"],)));
                           },
                           child: ProductsContainer(
                             img: Product[index]["bgImage"],
